@@ -110,7 +110,7 @@ st.markdown("""
     <a href="https://manishshettigar253.github.io/Manish_Portfolio/" target="_blank">
         <img src="https://img.shields.io/badge/Portfolio-%230077B5.svg?logo=user&logoColor=white" />
     </a>
-    <a href="https://www.youtube.com/@wanderlustEngineer253" target="_blank">
+    <a href="https://www.youtube.com/@wanderTechEngineer253" target="_blank">
         <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=youtube&logoColor=white" />
     </a>
     <a href="https://www.instagram.com/manish__shettigar?igsh=aGlwemQwdzc2N3g2" target="_blank">
