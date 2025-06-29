@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 # ========== Model Preparation ==========
-data = pd.read_csv("HPrice.csv")
+data = pd.read_csv("HPrice_Kochi.csv")
 data['Bedrooms'] = data['Bedrooms'].fillna(data['Bedrooms'].median())
 data = data.dropna(subset=['Price'])
 
@@ -92,10 +92,6 @@ if st.button("📊 Predict Price"):
         <strong>Estimated Price:</strong> ₹ {price:,.2f}
     </div>
     """, unsafe_allow_html=True)
-
-# ======= Sample Data View ========
-with st.expander("📂 View Sample Training Data"):
-    st.dataframe(data.head())
 
 # ========== Footer ==========
 st.markdown("---", unsafe_allow_html=True)
