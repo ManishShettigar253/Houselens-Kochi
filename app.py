@@ -19,7 +19,7 @@ XTy = XT.dot(y)
 BHAT = XTXINV.dot(XTy)
 
 # ========== Streamlit UI ==========
-st.set_page_config(page_title="House Price Predictor", layout="centered", page_icon="🏠")
+st.set_page_config(page_title="Houselens Kochi", layout="centered", page_icon="🏠")
 
 # Custom CSS and Navbar
 st.markdown("""
@@ -64,22 +64,27 @@ st.markdown("""
     </style>
 
     <div class="navbar">
-        <h1>🏠 House Price Prediction App</h1>
+        <h1>🏠 Houselens Kochi</h1>
     </div>
 """, unsafe_allow_html=True)
 
-# App Title
-st.markdown("<h2 style='text-align: center;'>Estimate the price of your dream house 💸</h2>", unsafe_allow_html=True)
-st.write("Enter the house details below to get an estimated market price:")
+# ======= App Body Title ========
+st.markdown("<h2 style='text-align: center;'>Estimate the price of your flat, apartment or home in Kochi 💰</h2>", unsafe_allow_html=True)
 
-# Sidebar inputs
-with st.sidebar:
-    st.header("🔧 Input Parameters")
-    area = st.number_input("📐 Area (sqft)", min_value=300, max_value=10000, value=3000)
-    bedrooms = st.slider("🛏️ Bedrooms", 1, 6, value=3)
-    age = st.slider("🏚️ Age of House", 0, 50, value=10)
+# ======= Input Form ========
+st.markdown("### 🧾 Enter Property Details")
+col1, col2, col3 = st.columns(3)
 
-# Predict button
+with col1:
+    area = st.number_input("📐 Area (in sqft)", min_value=300, max_value=10000, value=3000)
+
+with col2:
+    bedrooms = st.number_input("🛏️ Number of Bedrooms", min_value=1, max_value=10, value=3)
+
+with col3:
+    age = st.number_input("🏚️ Age of the Property (years)", min_value=0, max_value=100, value=10)
+
+# ======= Predict Button ========
 if st.button("📊 Predict Price"):
     price = BHAT[0] + BHAT[1]*area + BHAT[2]*bedrooms + BHAT[3]*age
     st.markdown(f"""
@@ -88,8 +93,8 @@ if st.button("📊 Predict Price"):
     </div>
     """, unsafe_allow_html=True)
 
-# Optional: show data sample at the bottom
-with st.expander("📂 See Sample Data"):
+# ======= Sample Data View ========
+with st.expander("📂 View Sample Training Data"):
     st.dataframe(data.head())
 
 # ========== Footer ==========
@@ -110,7 +115,7 @@ st.markdown("""
     <a href="https://manishshettigar253.github.io/Manish_Portfolio/" target="_blank">
         <img src="https://img.shields.io/badge/Portfolio-%230077B5.svg?logo=user&logoColor=white" />
     </a>
-    <a href="https://www.youtube.com/@wanderTechEngineer253" target="_blank">
+    <a href="https://www.youtube.com/@wanderTechEngineer" target="_blank">
         <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=youtube&logoColor=white" />
     </a>
     <a href="https://www.instagram.com/manish__shettigar?igsh=aGlwemQwdzc2N3g2" target="_blank">
